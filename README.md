@@ -4,9 +4,11 @@ Stdio MCP proxy for the [CreoleCentric](https://creolecentric.com) remote MCP se
 
 CreoleCentric exposes its developer API as MCP tools at
 `https://creolecentric.com/mcp/` over the Streamable HTTP transport. Most
-modern MCP clients (Claude Desktop, Claude Code, Cursor) can talk to that
-URL directly. This package is for the **stdio-only** clients — it spawns
-locally, speaks stdio MCP, and forwards every request to the remote server.
+modern MCP clients ([Anthropic's desktop app](https://claude.ai/download),
+[Anthropic's terminal client](https://claude.com/product/claude-code),
+Cursor) can talk to that URL directly. This package is for the
+**stdio-only** clients — it spawns locally, speaks stdio MCP, and forwards
+every request to the remote server.
 
 ## Install
 
@@ -23,7 +25,7 @@ creolecentric-mcp        # speaks MCP on stdio; quit with Ctrl-D
 
 Generate an API key at <https://creolecentric.com/api-keys>.
 
-### Claude Desktop
+### [Anthropic's desktop app](https://claude.ai/download)
 
 Add to `~/Library/Application Support/Claude/claude_desktop_config.json`
 (macOS) or the equivalent on your platform:
@@ -41,7 +43,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`
 }
 ```
 
-Restart Claude Desktop. The 24 CreoleCentric tools (TTS, translation,
+Restart the desktop app. The 24 CreoleCentric tools (TTS, translation,
 dictionary lookup, STT, account/credits) appear in the tool picker.
 
 ## Pointing at a different server
@@ -55,7 +57,7 @@ CREOLECENTRIC_MCP_URL=https://staging.creolecentric.com/mcp/ creolecentric-mcp
 ## What it does
 
 ```
-Claude Desktop  ──stdio MCP──>  creolecentric-mcp  ──Streamable HTTP MCP──>  https://creolecentric.com/mcp/
+stdio MCP client  ──stdio MCP──>  creolecentric-mcp  ──Streamable HTTP MCP──>  https://creolecentric.com/mcp/
 ```
 
 Each `tools/list` and `tools/call` from the local stdio peer is forwarded

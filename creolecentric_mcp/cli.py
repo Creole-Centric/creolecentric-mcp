@@ -19,8 +19,8 @@ def _build_parser() -> argparse.ArgumentParser:
         prog="creolecentric-mcp",
         description=(
             "Stdio MCP proxy for the CreoleCentric remote MCP server. "
-            "Lets stdio-only MCP clients (Claude Desktop, etc.) talk to "
-            "https://creolecentric.com/mcp/ over the local process."
+            "Lets stdio-only MCP clients (Anthropic's desktop app, etc.) "
+            "talk to https://creolecentric.com/mcp/ over the local process."
         ),
     )
     parser.add_argument(

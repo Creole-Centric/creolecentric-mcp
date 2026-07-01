@@ -1,7 +1,7 @@
 """Stdio → Streamable HTTP proxy for the CreoleCentric MCP server.
 
 Speaks MCP over stdio (so any MCP client that only supports stdio — including
-some embedded Claude Desktop configurations — can talk to it) and forwards
+some embedded desktop app configurations — can talk to it) and forwards
 every `tools/list` and `tools/call` to the remote `/mcp/` Streamable HTTP
 endpoint. The remote does the real work; this module is a thin transport
 adapter.
